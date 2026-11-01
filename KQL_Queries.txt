@@ -1,10 +1,7 @@
-MYFIRSTHACK - SENTINEL SOC HOME LAB - KQL QUERIES
-Run these on the query page:
-  Defender portal: Investigation & response > Hunting > Advanced hunting
-  Azure portal:    Microsoft Sentinel > Logs
+SENTINEL SOC HOME LAB - KQL QUERIES
 
 ==================================================================
-PART 4 - VERIFY: are the logs arriving?
+VERIFICATION: are the logs arriving?
 ==================================================================
 
 // Windows Security events, grouped by event ID
@@ -24,7 +21,7 @@ WindowsEvent
 
 
 ==================================================================
-PART 5 - DETECT
+DETECTION
 ==================================================================
 
 // Failed logons by account and source
@@ -45,7 +42,7 @@ SecurityEvent
 
 
 ==================================================================
-PART 6 - INVESTIGATE
+INVESTIGATION
 ==================================================================
 
 // Timeline of every failed logon for the account
@@ -69,7 +66,7 @@ SecurityEvent
 
 
 ==================================================================
-EXTRA - SYSMON HUNTING
+SYSMON HUNTING
 ==================================================================
 
 // Process creation (Event ID 1) - everything that ran on the VM
@@ -96,4 +93,3 @@ READING THE RESULTS
 - LogonType 3 is a network logon. LogonType 10 is Remote Desktop.
 - SubStatus 0xc0000064 = the username does not exist.
 - SubStatus 0xc000006a = a real username with the wrong password.
-- To read one Sysmon event in full, click the row and expand EventData.
